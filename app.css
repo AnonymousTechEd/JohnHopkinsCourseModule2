@@ -5,6 +5,9 @@ input {
     box-sizing: border-box;
   }
   .button1 {
+    margin: 16px 150px !important;
+  }
+  button {
     background-color: #4CAF50;
     border: none;
     color: #FFFFFF;
@@ -18,4 +21,17 @@ input {
     font-weight: 300;
     font-size: 22.5px;
     margin: 16px 100px !important;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+  }
+  .input2 {
+    margin: 16px 30px !important;
   }

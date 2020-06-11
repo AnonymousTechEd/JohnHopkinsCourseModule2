@@ -11,15 +11,20 @@
     <body>
         <h1>Eduard's Coursera App</h1>
         <div ng-controller="ApController">
-            Cost: {{ cookieCost | currency }}
             <br>
-            <input type="text" ng-model="inputvalue">
+            Replace This: <input type="text" ng-model="inputvalue">
             <br>
-            <button ng-click="InputButton()" class="button1">i am a cool button</button>
+            With That: <input type="text" ng-model="inputvalue2" class="input2">
+            <br>
+            <button ng-click="InputButton()" class="button1">Fix the output</button>
             <br>
             <br>
             <br>
             <h2>Output: {{response}}<h2></h2>
         </div>
     </body>
+    <footer>
+        @EduardFaus2020
+    </footer>
+
 </html>

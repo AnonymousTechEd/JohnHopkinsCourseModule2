@@ -3,23 +3,29 @@
 
     angular
         .module("App", [])
-        .controller("ApController", appController);
+        .controller("ApController", appController)
+        .filter("Replace", replaceFilter)
         
-        appController.$inject = ["$scope", "$filter"]
+        appController.$inject = ["$scope", "$filter", "ReplaceFilter"];
 
 
 
-        function appController($scope, $filter) {
+        function appController($scope, $filter, ReplaceFilter) {
             $scope.inputvalue = "";
-            $scope.response = "";
-            $scope.cookieCost = .45;
-            
+            $scope.inputvalue2 = "";
+            $scope.response = "Eduard is dumb";
             $scope.InputButton = function () {
-                var msg =  "Yes"
-                $scope.response = $filter("uppercase")(msg)
+                $scope.response = ReplaceFilter($scope.response, $scope.inputvalue, $scope.inputvalue2)
             }
         }
 
+        function replaceFilter() {
+            return function (input, a, b) {
+                input = input || "";
+                input = input.replace(a, b)
+                return input
+            }
+        }
 
 
 

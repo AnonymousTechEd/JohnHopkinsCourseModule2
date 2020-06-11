@@ -3,25 +3,26 @@
 
     angular
         .module("App", [])
-        .controller("CheckIfToMuch", [
-            "$scope",
-            function ($scope) {
-                $scope.inputvalue = "";
-                $scope.isItToMuch = "";
-                $scope.findIfItsToMuch = function () {
-                    $scope.arrayOfStrings = $scope.inputvalue.split(",")
-                    $scope.numberOfItems = $scope.arrayOfStrings.length
-                    if($scope.inputvalue == "") {
-                        $scope.isItToMuch = "Please enter data first";
-                    } else {
-                        if($scope.numberOfItems <= 3) {
-                            $scope.isItToMuch = "Enjoy";
-                        } else {
-                            $scope.isItToMuch = "Too much!";
-                        }
-                    }
-                }
+        .controller("ApController", appController);
+        
+        appController.$inject = ["$scope", "$filter"]
+
+
+
+        function appController($scope, $filter) {
+            $scope.inputvalue = "";
+            $scope.response = "";
+            $scope.cookieCost = .45;
+            
+            $scope.InputButton = function () {
+                var msg =  "Yes"
+                $scope.response = $filter("uppercase")(msg)
             }
-        ]);
+        }
+
+
+
+
+
 
 })();

@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html ng-app="App">
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="app.css">
         <script src="angular.min.js"></script>
         <script src="app.js" ></script>
         <title>Eduard Faus Coursera Project</title>
     </head>
     <body>
-        <h1>Check If to Much</h1>
-        <div ng-controller="CheckIfToMuch">
-            <button ng-click="findIfItsToMuch()">Check If Too Much</button>
-            <div> Is this to much ->  <input type="text" ng-model="inputvalue"> </div>
-            {{isItToMuch}}
+        <h1>Eduard's Coursera App</h1>
+        <div ng-controller="ApController">
+            Cost: {{ cookieCost | currency }}
+            <br>
+            <input type="text" ng-model="inputvalue">
+            <br>
+            <button ng-click="InputButton()" class="button1">i am a cool button</button>
+            <br>
+            <br>
+            <br>
+            <h2>Output: {{response}}<h2></h2>
         </div>
     </body>
 </html>

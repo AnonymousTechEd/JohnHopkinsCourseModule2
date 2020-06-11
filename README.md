@@ -1,1 +1,2 @@
-# JohnHopkinsCourseModule2
+# JohnHopkinsAngularCourse
+Cool course im following

@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-
+    
     angular
         .module("App", [])
         .controller("ApController", appController)
@@ -12,10 +12,10 @@
 
         function appController($scope, $filter, ReplaceFilter) {
             $scope.inputvalue = "";
-            $scope.inputvalue2 = "";
-            $scope.response = "Eduard is dumb";
+            $scope.array = ["Avocado", "Apple", "Cake Batter", "Bannana", "Pinapple","Pencil","Pen","Crayon"]
+            $scope.search = ""
             $scope.InputButton = function () {
-                $scope.response = ReplaceFilter($scope.response, $scope.inputvalue, $scope.inputvalue2)
+                $scope.search =  $scope.inputvalue
             }
         }
 

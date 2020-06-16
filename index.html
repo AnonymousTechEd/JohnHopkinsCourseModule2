@@ -12,15 +12,10 @@
         <h1>Eduard's Coursera App</h1>
         <div ng-controller="ApController">
             <br>
-            Replace This: <input type="text" ng-model="inputvalue">
+            <h2>Search: </h2> <input type="text" ng-model="inputvalue"> <button ng-click="InputButton()">Search</button>
             <br>
-            With That: <input type="text" ng-model="inputvalue2" class="input2">
-            <br>
-            <button ng-click="InputButton()" class="button1">Fix the output</button>
-            <br>
-            <br>
-            <br>
-            <h2>Output: {{response}}<h2></h2>
+            <h2>Items: </h2>
+            <h5 ng-repeat="item in array | filter: search"> {{ item }}<h5>
         </div>
     </body>
     <footer>

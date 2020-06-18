@@ -16,7 +16,7 @@
     <h1>Shopping List</h1>
     <div ng-controller='ShoppingListAddController as itemAdder'>
         <input type="text" ng-model="itemAdder.itemName" placeholder="item name">
-        <input type="number"  pattern="[0-9]{10}" ng-model="itemAdder.itemQuantity" placeholder="quantity">
+        <input type="number" ng-model="itemAdder.itemQuantity" placeholder="quantity">
         <button ng-click="itemAdder.addItem();">Add Item To Shopping List</button>
     </div>
 

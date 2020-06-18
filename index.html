@@ -23,6 +23,7 @@
     <div ng-controller='ShoppingListShowController as showList'>
         To Buy:
         <br>
+        <p ng-hide="showList.items">Everything is bought!</p>
         <ol>
             <li ng-repeat="item in showList.items">
                 Buy {{ item.quantity }} {{ item.name }}
@@ -34,6 +35,7 @@
     <div ng-controller='ShoppingListShowController2 as showList2'>
         Already Bought:
         <br>
+        <p ng-hide="showList2.items">Nothing bought yet</p>
         <ol>
             <li ng-repeat="item2 in showList2.items">
                 Buy {{ item2.quantity }} {{ item2.name }}

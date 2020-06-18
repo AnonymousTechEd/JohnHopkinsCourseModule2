@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html ng-app="App">
-    <head>
-        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="app.css">
-        <script src="angular.min.js"></script>
-        <script src="app.js" ></script>
-        <title>Eduard Faus Coursera Project</title>
-    </head>
-    <body>
-        <h1>Eduard's Coursera App</h1>
-        <div ng-controller="ApController">
-            <br>
-            <h2>Search: </h2> <input type="text" ng-model="inputvalue"> <button ng-click="InputButton()">Search</button>
-            <br>
-            <h2>Items: </h2>
-            <h5 ng-repeat="item in array | filter: search"> {{ item }}<h5>
-        </div>
-    </body>
-    <footer>
-        @EduardFaus2020
-    </footer>
+<html ng-app='ShoppingListApp'>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body { font-size: 1.2em; }
+    </style>
+    <title>Week 2 Assignment</title>
+</head>
+
+<body>
+    <h1>Shopping List</h1>
+    <div ng-controller='ShoppingListAddController as itemAdder'>
+        <input type="text" ng-model="itemAdder.itemName" placeholder="item name">
+        <input type="number"  pattern="[0-9]{10}" ng-model="itemAdder.itemQuantity" placeholder="quantity">
+        <button ng-click="itemAdder.addItem();">Add Item To Shopping List</button>
+    </div>
+
+    <div ng-controller='ShoppingListShowController as showList'>
+        To Buy:
+        <br>
+        <ol>
+            <li ng-repeat="item in showList.items">
+                Buy {{ item.quantity }} {{ item.name }}
+                <button ng-click="showList.removeItem($index);">Remove Item</button>
+                <button ng-click="showList.BuyItem($index);">Bought</button>
+            </li>
+        </ol>
+    </div>
+    <div ng-controller='ShoppingListShowController2 as showList2'>
+        Already Bought:
+        <br>
+        <ol>
+            <li ng-repeat="item2 in showList2.items">
+                Buy {{ item2.quantity }} {{ item2.name }}
+                <button ng-click="showList2.removeItem($index);">Remove Item</button>
+            </li>
+        </ol>
+    </div>
+</body>
+<footer>
+    @EduardFaus2020
+</footer>
 
 </html>

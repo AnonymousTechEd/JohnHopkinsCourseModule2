@@ -23,7 +23,7 @@
     <div ng-controller='ShoppingListShowController as showList'>
         To Buy:
         <br>
-        <h5 ng-if="!showList.items.length">Everything is bought!!</h5>
+        <h5 ng-if="!showList.items.length">Everything is bought!</h5>
         <ol>
             <li ng-repeat="item in showList.items">
                 Buy {{ item.quantity }} {{ item.name }}
